@@ -32,6 +32,15 @@ function App() {
     axios.post(endpoint, formPost).then((response) => {
       //VEDO IN CONSOLE IL POST CHE HO CREATO
       console.log("POST CREATO:", response.data);
+      //CREO UN ALERT CHE MI INFORMA CHE HO CREATO UN POST
+      alert("POST CREATO CON SUCCESSO!!");
+      //UNA VOLTA INVIATO I DATI, RIPULISCO I CAMPI DI INPUT
+      setFormPost({
+        author: "",
+        title: "",
+        body: "",
+        public: false,
+      });
     });
   }
   //CREO LA STRUTTURA HTML
