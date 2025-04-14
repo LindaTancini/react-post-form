@@ -28,8 +28,12 @@ function App() {
     event.preventDefault();
     //VEDO IN CONSOLE
     console.log("POST CHE HO CREATO PER PROVARE CHE TUTTO FUNZIONI:", formPost);
+    // CREO UNA CHIAMATA AXIOS PER CREARE I POST
+    axios.post(endpoint, formPost).then((response) => {
+      //VEDO IN CONSOLE IL POST CHE HO CREATO
+      console.log("POST CREATO:", response.data);
+    });
   }
-
   //CREO LA STRUTTURA HTML
   return (
     <>
@@ -80,7 +84,6 @@ function App() {
             name="public"
           />
         </div>
-
         <button type="submit">Salva il post</button>
       </form>
     </>
