@@ -29,19 +29,26 @@ function App() {
     //VEDO IN CONSOLE
     console.log("POST CHE HO CREATO PER PROVARE CHE TUTTO FUNZIONI:", formPost);
     // CREO UNA CHIAMATA AXIOS PER CREARE I POST
-    axios.post(endpoint, formPost).then((response) => {
-      //VEDO IN CONSOLE IL POST CHE HO CREATO
-      console.log("POST CREATO:", response.data);
-      //CREO UN ALERT CHE MI INFORMA CHE HO CREATO UN POST
-      alert("POST CREATO CON SUCCESSO!!");
-      //UNA VOLTA INVIATO I DATI, RIPULISCO I CAMPI DI INPUT
-      setFormPost({
-        author: "",
-        title: "",
-        body: "",
-        public: false,
+    axios
+      .post(endpoint, formPost)
+      .then((response) => {
+        //VEDO IN CONSOLE IL POST CHE HO CREATO
+        console.log("POST CREATO:", response.data);
+        //CREO UN ALERT CHE MI INFORMA CHE HO CREATO UN POST
+        alert("POST CREATO CON SUCCESSO!!");
+        //UNA VOLTA INVIATO I DATI, RIPULISCO I CAMPI DI INPUT
+        setFormPost({
+          author: "",
+          title: "",
+          body: "",
+          public: false,
+        });
+      })
+      //AGGIUNGO L'ERRORE
+      .catch((errore) => {
+        console.error(errore);
+        alert("ERRORE: IL POST NON E' STATO CREATO, RITENTA.");
       });
-    });
   }
   //CREO LA STRUTTURA HTML
   return (
