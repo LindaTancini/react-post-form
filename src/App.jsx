@@ -1,6 +1,8 @@
 //IMPORTAZIONI
 import { useState } from "react";
 import axios from "axios";
+// METTO LE API DENTRO UNA VARIABILE ENDPOINT
+const endpoint = "https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts";
 
 function App() {
   //CREO I CAMPI CHE ANDRANNO INSERITI NEL FORM
@@ -27,6 +29,7 @@ function App() {
     //VEDO IN CONSOLE
     console.log("POST CHE HO CREATO PER PROVARE CHE TUTTO FUNZIONI:", formPost);
   }
+
   //CREO LA STRUTTURA HTML
   return (
     <>
